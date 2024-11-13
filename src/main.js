@@ -1,5 +1,5 @@
 import './assets/tailwind.css'
-import '@fortawesome/fontawesome-free/css/all.css';
+// import '@fortawesome/fontawesome-free/css/all.css';
 import Toast from 'vue-toastification';
 import 'vue-toastification/dist/index.css';
 
