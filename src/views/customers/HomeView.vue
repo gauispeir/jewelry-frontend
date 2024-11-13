@@ -8,10 +8,11 @@ import { useToast } from "vue-toastification";
 
 const toast = useToast();
 
-const bgImage = ref([
-  "../../src/assets/bgImage.png",
-  "../../src/assets/bgImage2.png",
-]);
+
+import bgImage1 from '@/assets/bgImage.png';
+import bgImage2 from '@/assets/bgImage2.png';
+
+const bgImage = ref([bgImage1, bgImage2]);
 
 const currentIndex = ref(bgImage.value.length - 1); // Start from the last image
 
