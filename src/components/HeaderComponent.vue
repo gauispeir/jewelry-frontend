@@ -169,7 +169,7 @@ const logout=()=>{
       <!-- Mobile menu -->
          <div
         v-if="show"
-        class="shadow-lg border-r pt-12 px-4 fixed top-0 left-0 bg-white h-screen w-[300px] lg:hidden xl:hidden max-h-[90vh] overflow-y-auto"
+        class="shadow-lg border-r pt-12 px-4 fixed top-0 left-0 bg-white h-screen w-[300px] lg:hidden xl:hidden max-h-[100vh] overflow-y-auto"
       >
         <RouterLink  @click="close"
           :to="token ? '/views/home' : '/'"
@@ -213,7 +213,7 @@ const logout=()=>{
           <i class="fas fa-list p-3 rounded-md mr-2"></i>
           <a > Orders</a>
         </RouterLink>
-          <span class="w-full inline-block p-3 hover:bg-gray-50 rounded-lg font-semibold my-1 cursor-pointer" @click="logout">Logout</span>
+          <span class="w-full inline-block p-3 hover:bg-gray-50 rounded-lg font-semibold my-1 cursor-pointer" @click="logout"> <i class="fas fa-sign-out p-3 rounded-md mr-2"></i>Logout</span>
          <RouterLink @click="close" v-if="!token" to="/login" class="w-full inline-block p-3 hover:bg-gray-50 rounded-lg font-semibold my-1">
           <i class="fas fa-sign-in p-3 rounded-md mr-2"></i>
           <a >Login</a>

@@ -156,7 +156,7 @@ function viewDetails(item) {
                     @click="deleteSubmit(item.id)"
                     class="text-slate-800 text-sm bg-white hover:bg-slate-100 border border-slate-200 rounded-lg font-medium px-4 py-2 inline-flex space-x-1 items-center"
                   >
-                    Delete
+                    Hide
                   </button>
                 </td>
               </tr>
@@ -220,7 +220,7 @@ function viewDetails(item) {
             ></path>
           </svg>
           <h3 class="text-xl font-normal text-gray-500 mt-5 mb-6">
-            Are you sure you want to delete this user?
+            Are you sure you want to hide this user?
           </h3>
           <a
             @click="handleDelete()"
