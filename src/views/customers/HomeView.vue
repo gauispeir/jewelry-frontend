@@ -1258,7 +1258,7 @@ onMounted(() => {
             <a href="#"></a>
             <div class="relative">
               <img
-                class="w-full max-h-[300px] object-cover"
+                class="w-full h-[300px] object-cover"
                 :src="`https://jewelry-backend-rh2w.onrender.com/images/${item.productImage}`"
                 alt="Sunset in the mountains"
               />
