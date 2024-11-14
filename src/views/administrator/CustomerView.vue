@@ -133,7 +133,7 @@ function viewDetails(item) {
                 <th class="text-left font-semibold">Phone Number</th>
 
                 <th class="text-left font-semibold">View</th>
-                <th class="text-left font-semibold">Delete</th>
+                <th class="text-left font-semibold">Hide</th>
               </tr>
             </thead>
             <tbody>
