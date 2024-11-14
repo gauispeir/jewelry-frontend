@@ -204,7 +204,7 @@ const seeMore = () => {
 };
 
 const openItem = (index) => {
-  window.location.href="http://localhost:5173/login";
+  window.location.href="https://jackiegolddigger.netlify.app/login";
   // itemIndex.value = index;
 };
 
@@ -1031,7 +1031,7 @@ onMounted(() => {
             <div class="relative">
               <a href="#">
                 <img
-                  class="w-full"
+                  class="w-full h-[400px] object-cover"
                  :src="`https://jewelry-backend-rh2w.onrender.com/images/${item.productImage}`"
                   alt="Sunset in the mountains"
                 />
