@@ -213,6 +213,7 @@ const logout=()=>{
           <i class="fas fa-list p-3 rounded-md mr-2"></i>
           <a > Orders</a>
         </RouterLink>
+          <span class="w-full inline-block p-3 hover:bg-gray-50 rounded-lg font-semibold my-1 cursor-pointer" @click="logout">Logout</span>
          <RouterLink @click="close" v-if="!token" to="/login" class="w-full inline-block p-3 hover:bg-gray-50 rounded-lg font-semibold my-1">
           <i class="fas fa-sign-in p-3 rounded-md mr-2"></i>
           <a >Login</a>
