@@ -169,7 +169,7 @@ const logout=()=>{
       <!-- Mobile menu -->
          <div
         v-if="show"
-        class="shadow-lg border-r pt-12 px-4 fixed top-0 left-0 bg-white h-screen w-[300px] lg:hidden xl:hidden"
+        class="shadow-lg border-r pt-12 px-4 fixed top-0 left-0 bg-white h-screen w-[300px] lg:hidden xl:hidden max-h-[90vh] overflow-y-auto"
       >
         <RouterLink  @click="close"
           :to="token ? '/views/home' : '/'"
