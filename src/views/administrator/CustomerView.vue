@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted, watch } from "vue";
 import axios from "../../../axios";
-import { useToast } from 'vue-toastification';
+import { useToast } from "vue-toastification";
 
 const toast = useToast();
 const showModal = ref(false);
@@ -22,7 +22,7 @@ watch(itemName, (newVal, oldVal) => {
 const next = () => {
   if (tableData.value.length - 1 > 0) {
     fetchData();
-      tableData.value = {};
+    tableData.value = {};
     if (tableData.value.length > 0) {
       page.value++;
     }
@@ -79,7 +79,7 @@ const handleDelete = async () => {
     );
 
     if (response.status === 200) {
-      toast.success("Success: Account deleted successfully!");
+      toast.success("Success: User account deactivated successfully!");
       fetchData();
     } else {
       toast.error("Unexpected status code: " + response.status);
@@ -105,8 +105,8 @@ function viewDetails(item) {
 </script>
 
 <template>
-  <div class="h-full px-4 md:px-6  w-full mt-24 py-6">
-    <div class="w-full  shadow-lg p-4 rounded-md border">
+  <div class="h-full px-4 md:px-6 w-full mt-24 py-6">
+    <div class="w-full shadow-lg p-4 rounded-md border">
       <div class="flex items-center justify-end mb-4">
         <div class="bg-white p-2 rounded-lg border">
           <i class="fas fa-search mr-2"></i>
@@ -124,16 +124,14 @@ function viewDetails(item) {
           <table class="w-full">
             <thead>
               <tr>
-                <th class="text-left font-semibold">
-                  No. 
-                </th>
+                <th class="text-left font-semibold">No.</th>
                 <th class="text-left font-semibold">First Name</th>
                 <th class="text-left font-semibold">Last Name</th>
                 <th class="text-left font-semibold">Email</th>
                 <th class="text-left font-semibold">Phone Number</th>
 
                 <th class="text-left font-semibold">View</th>
-                <th class="text-left font-semibold">Hide</th>
+                <th class="text-left font-semibold">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -153,10 +151,18 @@ function viewDetails(item) {
                 </td>
                 <td>
                   <button
+                    v-if="item.status === 'verified'"
                     @click="deleteSubmit(item.id)"
                     class="text-slate-800 text-sm bg-white hover:bg-slate-100 border border-slate-200 rounded-lg font-medium px-4 py-2 inline-flex space-x-1 items-center"
                   >
-                    Hide
+                    Active
+                  </button>
+                  <button
+                    v-else
+                    :disabled="true"
+                    class="text-slate-800 text-sm bg-red-100 text-red-700 rounded-lg font-medium p-1 inline-flex space-x-1 items-center"
+                  >
+                    Inactive
                   </button>
                 </td>
               </tr>
@@ -170,9 +176,19 @@ function viewDetails(item) {
           </section>
           <section v-else>Showing {{ tableData.length }} entries</section>
           <section>
-            <button class="p-2 border rounded-md bg-black text-white" @click="prev">Prev</button>
+            <button
+              class="p-2 border rounded-md bg-black text-white"
+              @click="prev"
+            >
+              Prev
+            </button>
             <button class="px-4">{{ page }}</button>
-            <button class="p-2 border rounded-md bg-black text-white" @click="next">Next</button>
+            <button
+              class="p-2 border rounded-md bg-black text-white"
+              @click="next"
+            >
+              Next
+            </button>
           </section>
         </div>
       </div>
@@ -220,7 +236,7 @@ function viewDetails(item) {
             ></path>
           </svg>
           <h3 class="text-xl font-normal text-gray-500 mt-5 mb-6">
-            Are you sure you want to hide this user?
+            Do you want to mark this user as inactive?
           </h3>
           <a
             @click="handleDelete()"
@@ -270,14 +286,26 @@ function viewDetails(item) {
         </div>
         <div class="grid xl:grid-cols-2 lg:grid-cols-2 gap-2">
           <section>
-          <p class="border p-2 my-2 rounded-md"><strong>First Name:</strong> {{ selectedItem.firstname }}</p>
-          <p class="border p-2 my-2 rounded-md"><strong>Last Name:</strong> {{ selectedItem.lastname }}</p>
-          <p class="border p-2 my-2 rounded-md"><strong>Email:</strong> {{ selectedItem.email }}</p>
+            <p class="border p-2 my-2 rounded-md">
+              <strong>First Name:</strong> {{ selectedItem.firstname }}
+            </p>
+            <p class="border p-2 my-2 rounded-md">
+              <strong>Last Name:</strong> {{ selectedItem.lastname }}
+            </p>
+            <p class="border p-2 my-2 rounded-md">
+              <strong>Email:</strong> {{ selectedItem.email }}
+            </p>
           </section>
           <section>
-          <p class="border p-2 my-2 rounded-md"><strong>Phone Number:</strong> {{ selectedItem.phonenumber }}</p>
-          <p class="border p-2 my-2 rounded-md"><strong>Gender:</strong> {{ selectedItem.gender }}</p>
-          <p class="border p-2 my-2 rounded-md"><strong>Birth Date:</strong> {{ selectedItem.birth }}</p>
+            <p class="border p-2 my-2 rounded-md">
+              <strong>Phone Number:</strong> {{ selectedItem.phonenumber }}
+            </p>
+            <p class="border p-2 my-2 rounded-md">
+              <strong>Gender:</strong> {{ selectedItem.gender }}
+            </p>
+            <p class="border p-2 my-2 rounded-md">
+              <strong>Birth Date:</strong> {{ selectedItem.birth }}
+            </p>
           </section>
         </div>
         <div class="flex justify-end mt-4">
