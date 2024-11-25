@@ -55,16 +55,16 @@
           <p class="mr-1 text-gray-800">Privacy</p>
 
           <p class="mr-1 text-gray-800">Address:</p>
-          <RouterLink class="mr-1 text-gray-800" to="/views/installment">Installment plan</RouterLink>
+          <RouterLink class="mr-1 text-gray-800" to="/views/installment">Layaway Plan</RouterLink>
         </div>
         <div class="space-y-2 text-sm">
           <span class="text-base font-bold tracking-wide text-gray-900"
             >Information</span
           >
 
-          <p class="mr-1 text-gray-800">About Us</p>
+          <a href="https://jackiegolddigger.netlify.app/about" class="mr-1 inline-block w-full text-gray-800">About Us</a>
 
-          <p class="mr-1 text-gray-800">Contact Us</p>
+          <a href="https://jackiegolddigger.netlify.app/contact" class="mr-1 inline-block w-full text-gray-800">Contact Us</a>
         </div>
       </div>
       <div

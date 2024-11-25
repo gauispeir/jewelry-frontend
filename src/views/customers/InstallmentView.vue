@@ -1,7 +1,7 @@
 <template>
   <div class="max-w-4xl mx-auto p-6 bg-background rounded-lg shadow-md mt-32">
     <h1 class="text-2xl font-bold text-foreground mb-4">
-      Cash Installment Plan
+      Cash Layaway Plan
     </h1>
     <p class="text-muted-foreground mb-6">pay at your own terms</p>
 
