@@ -1065,7 +1065,7 @@ onMounted(() => {
             <h2
               class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl"
             >
-              Testemonials
+              Testimonials
             </h2>
           </div>
           <ul
